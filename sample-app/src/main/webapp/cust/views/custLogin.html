@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html ng-app="cust">
+<head>
+	<link rel="stylesheet" href="../../webjars/bootstrap/3.3.7/css/bootstrap.css"/>
+	<link rel="stylesheet" href="../css/cust.css">
+</head>
+
+<body>
+	<div ng-show="error" class="alert alert-danger">{{error}}</div>
+	<div ng-controller="basicLoginController as controller">
+
+		<form name="form" ng-submit="controller.login()">
+			<div class="form-group">
+				<label for="username">Username</label> 
+				<i class="fa fa-key"></i> 
+				<input
+					type="text" name="username" id="username" class="form-control"
+					ng-model="controller.username" required /> 
+				<span
+					ng-show="form.username.$dirty && form.username.$error.required"
+					class="help-block">Username is required</span>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label> 
+				<i class="fa fa-lock"></i>
+				<input
+					type="password" name="password" id="password" class="form-control"
+					ng-model="controller.password" required /> 
+				<span
+					ng-show="form.password.$dirty && form.password.$error.required"
+					class="help-block">Password is required</span>
+			</div>
+			<div class="form-actions">
+				<button type="submit" ng-disabled="form.$invalid || dataLoading"
+					class="btn btn-danger">Login</button>
+				<img ng-if="dataLoading"
+					src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+			</div>
+		</form>
+
+	</div>
+	
+	<h2>Or login with your LinkedIn account</h2>
+	
+	<!-- todo: include is not working -->
+	<!--#include file="view-source:http://localhost:8080/sample-app/common/views/footer.html" -->
+	<script src="../../webjars/jquery/3.1.0/jquery.js"></script>
+	<script src="../../webjars/angularjs/1.5.8/angular.js"></script>
+	<script src="../../webjars/angularjs/1.5.8/angular-resource.js"></script>
+	<script src="../../webjars/angularjs/1.5.8/angular-route.js"></script>
+	<script src="../../webjars/angularjs/1.5.8/angular-cookies.js"></script> 
+	<script src="../../common/js/common.js"></script>
+	<script src="../js/cust.js"></script>
+	
+</body>
+</html>
