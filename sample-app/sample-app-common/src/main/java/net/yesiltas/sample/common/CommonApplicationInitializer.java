@@ -10,5 +10,5 @@ public class CommonApplicationInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(CommonApplicationInitializer.class, args);
 	}
-	
+	 
 }

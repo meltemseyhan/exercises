@@ -1,5 +1,7 @@
 package net.yesiltas.sample.common.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailException;
@@ -14,6 +16,8 @@ import net.yesiltas.sample.common.model.SampleResponse;
 @Service
 public class EmailService {
 	
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	@Autowired
 	private JavaMailSender mailSender;
 	
@@ -24,7 +28,7 @@ public class EmailService {
 		SampleResponse resp = null;
 	        
 	    MimeMessagePreparator messagePreparator = mimeMessage -> {
-	        MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, (attachments.length > 0));
+	        MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, attachments.length > 0);
 	        messageHelper.setFrom((from == null) ? defaultFrom : from);
 	        messageHelper.setTo((to == null) ? new String[0] : to);
 	        messageHelper.setCc((cc == null) ? new String[0] : cc);
@@ -34,13 +38,14 @@ public class EmailService {
 	        for (MailAttachment attachment: attachments) {
 	        	messageHelper.addAttachment(attachment.getFileName(), attachment.getInputStreamSource(), attachment.getContentType());
 			}
-	        
 	    };
 	    try {    	
+	    	logger.debug("Sending email....");
 	        mailSender.send(messagePreparator);
+	        logger.debug("Email is sent...");
 	        resp = new SampleResponse(true, "", null);
 	    } catch (MailException e) {
-	        e.printStackTrace();
+	        logger.error(e.getMessage(), e);
 	        resp = new SampleResponse(false, "Could not send email", e);
 	    }		
 		return resp;

@@ -19,7 +19,13 @@
 			<groupId>net.yesiltas</groupId>
 			<artifactId>sample-app-common</artifactId>
 			<version>${project.parent.version}</version>
-		</dependency>	    		
+		</dependency>	    	
+		
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <scope>provided</scope>
+		</dependency>	
 	</dependencies>
 
 	<build>
