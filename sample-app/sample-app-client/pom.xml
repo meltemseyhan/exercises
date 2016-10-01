@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.yesiltas</groupId>
+		<artifactId>sample-app</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>sample-app-client</artifactId>
+	<packaging>war</packaging>
+	<name>sample-app-client</name>
+
+	<properties>
+		<bootstrap.version>3.3.7</bootstrap.version>
+		<angular.version>1.5.8</angular.version>
+		<jquery.version>3.1.0</jquery.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>angularjs</artifactId>
+			<version>${angular.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>${bootstrap.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>${jquery.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>sample-app-client</finalName>
+
+		<plugins>
+			<plugin>
+			 <groupId>org.apache.maven.plugins</groupId>
+			 <artifactId>maven-war-plugin</artifactId>
+			 <configuration>
+			   <webResources>
+			     <resource>
+			       <filtering>true</filtering>
+			       <directory>src/main/webapp</directory>
+			       <includes>
+			         <include>**/*.js</include>
+			       </includes>
+			     </resource>
+			   </webResources>
+			 </configuration>
+			</plugin>	
+		</plugins>
+		
+	</build>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
+			<properties>
+				<cust.api.url>http://localhost:8080/sample-app-cust/cust/api</cust.api.url>
+				<user.api.url>http://localhost:8080/sample-app-user/user/api</user.api.url>
+			</properties>
+		</profile>
+
+	</profiles>
+</project>

@@ -8,77 +8,26 @@
 	</parent>
 	<groupId>net.yesiltas</groupId>
 	<artifactId>sample-app</artifactId>
-	<packaging>war</packaging>
+	<packaging>pom</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Meltem's Sample Application</name>
 	<url>http://maven.apache.org</url>
 	
 	<properties>
-    	<start-class>net.yesiltas.sample.web.MyApplicationInitializer</start-class>
-    	<java.version>1.8</java.version>
-		<bootstrap.version>3.3.7</bootstrap.version>
-		<angular.version>1.5.8</angular.version>
-		<jquery.version>3.1.0</jquery.version>    
+    	<java.version>1.8</java.version>    	
 	</properties>
 		
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-		</dependency>
-			
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>		     
-        
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>angularjs</artifactId>
-			<version>${angular.version}</version>
-			<scope>runtime</scope>
-		</dependency>
+	<dependencies>		
 
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>bootstrap</artifactId>
-			<version>${bootstrap.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		
-		
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>jquery</artifactId>
-			<version>${jquery.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>	
-				
 	</dependencies>
+	
 	<build>
-		<finalName>sample-app</finalName>
-		
-	    <resources>
-	        <resource>
-	            <directory>src/main/resources</directory>
-	            <filtering>true</filtering>
-	        </resource>
-	    </resources>		
+		<finalName>sample-app</finalName>	
 	</build>
+	
+	<modules>
+		<module>sample-app-common</module>
+		<module>sample-app-cust</module>
+		<module>sample-app-client</module>
+	</modules>
 </project>
