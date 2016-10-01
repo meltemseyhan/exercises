@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 
-public class CommonApplicationInitializer {
+public class CommonApplicationInitializer { //NOSONAR
 	public static void main(String[] args) {
-		SpringApplication.run(CommonApplicationInitializer.class, args);
+		SpringApplication.run(CommonApplicationInitializer.class, args); //NOSONAR
 	}
-	
+	 
 }

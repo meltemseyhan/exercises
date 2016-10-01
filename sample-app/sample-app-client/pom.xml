@@ -38,6 +38,18 @@
 			<version>${jquery.version}</version>
 			<scope>runtime</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>net.yesiltas</groupId>
+			<artifactId>sample-app-common-model</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.yesiltas</groupId>
+			<artifactId>sample-app-cust-model</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
 
 	</dependencies>
 
@@ -46,22 +58,19 @@
 
 		<plugins>
 			<plugin>
-			 <groupId>org.apache.maven.plugins</groupId>
-			 <artifactId>maven-war-plugin</artifactId>
-			 <configuration>
-			   <webResources>
-			     <resource>
-			       <filtering>true</filtering>
-			       <directory>src/main/webapp</directory>
-			       <includes>
-			         <include>**/*.js</include>
-			       </includes>
-			     </resource>
-			   </webResources>
-			 </configuration>
-			</plugin>	
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webResources>
+						<resource>
+							<filtering>true</filtering>
+							<directory>src/main/webapp</directory>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
 		</plugins>
-		
+
 	</build>
 	<profiles>
 		<profile>

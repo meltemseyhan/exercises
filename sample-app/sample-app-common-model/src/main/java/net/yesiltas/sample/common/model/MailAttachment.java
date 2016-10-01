@@ -1,5 +1,6 @@
 package net.yesiltas.sample.common.model;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -38,8 +39,17 @@ public class MailAttachment {
 	}
 
 	public void setInputStreamSource(InputStream inputStream) throws IOException {
-		byte[] bytes = new byte[inputStream.available()];
-		inputStream.read(bytes);
-		this.inputStreamSource = new ByteArrayResource(bytes);
+
+		ByteArrayOutputStream bos = new ByteArrayOutputStream(inputStream.available());
+		try {
+			int next = inputStream.read();
+			while (next != -1) {
+				bos.write(next);
+			}
+			this.inputStreamSource = new ByteArrayResource(bos.toByteArray());
+		} finally {
+			inputStream.close();
+			bos.close();
+		}
 	}
 }

@@ -17,4 +17,19 @@ VALUES
 'Yesiltas',
  0,
 'password',
-'meltem@yesiltas.net');
+'meltem');
+
+INSERT INTO `customer`
+(
+`address`,
+`city`,
+`country`,
+`email`,
+`name`)
+VALUES
+(
+'Addresss',
+'Istanbul',
+'Turkey',
+'meltem@yesiltas.net',
+'Meltem Yesiltas');

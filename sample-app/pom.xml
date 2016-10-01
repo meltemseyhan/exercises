@@ -12,22 +12,48 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Meltem's Sample Application</name>
 	<url>http://maven.apache.org</url>
-	
-	<properties>
-    	<java.version>1.8</java.version>    	
-	</properties>
-		
-	<dependencies>		
 
+	<properties>
+		<java.version>1.8</java.version>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>			
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>	
 	</dependencies>
-	
+
 	<build>
-		<finalName>sample-app</finalName>	
+		<finalName>sample-app</finalName>
 	</build>
-	
+
 	<modules>
 		<module>sample-app-common</module>
 		<module>sample-app-cust</module>
 		<module>sample-app-client</module>
+		<module>sample-app-common-model</module>
+		<module>sample-app-cust-model</module>
 	</modules>
 </project>

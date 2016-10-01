@@ -11,7 +11,6 @@
 	<packaging>war</packaging>
 
 	<properties>
-		<start-class>net.yesiltas.sample.cust.CustApplicationInitializer</start-class>
 	</properties>
 
 	<dependencies>
@@ -19,7 +18,17 @@
 			<groupId>net.yesiltas</groupId>
 			<artifactId>sample-app-common</artifactId>
 			<version>${project.parent.version}</version>
-		</dependency>	    		
+		</dependency>	    	
+		<dependency>
+			<groupId>net.yesiltas</groupId>
+			<artifactId>sample-app-common-model</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>	
+		<dependency>
+			<groupId>net.yesiltas</groupId>
+			<artifactId>sample-app-cust-model</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>	
 	</dependencies>
 
 	<build>

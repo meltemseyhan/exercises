@@ -7,30 +7,30 @@ import static org.mockito.Mockito.when;
 import java.io.IOException;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import net.yesiltas.sample.common.CommonApplicationInitializer;
 import net.yesiltas.sample.common.model.MailAttachment;
-import net.yesiltas.sample.common.model.SampleResponse;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { CommonApplicationInitializer.class })
 
 public class EmailServiceTest {
 
-	@MockBean
+	//@MockBean
+	@Autowired
 	EmailService emailService;
 
-	@Before
+	//@Before
 	public void setup() {
 		when(this.emailService.sendEmail(anyString(), any(String[].class), any(String[].class), any(String[].class),
 				anyString(), anyString(), any(MailAttachment[].class)))
-						.thenReturn(new SampleResponse(true, null, null));
+						.thenReturn(ResponseEntity.ok().body(null));
 	}
 
 	@Test

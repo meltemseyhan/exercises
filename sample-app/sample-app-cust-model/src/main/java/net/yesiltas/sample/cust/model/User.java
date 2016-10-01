@@ -3,10 +3,6 @@ package net.yesiltas.sample.cust.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonProperty.Access;
-
 import net.yesiltas.sample.common.model.BaseEntity;
 
 @Entity
@@ -19,17 +15,15 @@ public class User extends BaseEntity {
     @Column(unique = true)
 	private String username;
 
-    @JsonProperty(access = Access.WRITE_ONLY)
     private String password;
 	
-    @JsonIgnore
     private Boolean locked = false;
 
-    @JsonIgnore
     private Boolean expired = false;
 
-    @JsonIgnore
-    private Boolean enabled = true;    
+    private Boolean enabled = true;   
+    
+    private Boolean credentialsExpired = false;     
 
     protected User() {}
 
@@ -103,6 +97,14 @@ public class User extends BaseEntity {
 
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public Boolean getCredentialsExpired() {
+		return credentialsExpired;
+	}
+
+	public void setCredentialsExpired(Boolean credentialsExpired) {
+		this.credentialsExpired = credentialsExpired;
 	}
 
 }
