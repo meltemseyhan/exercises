@@ -1,31 +1,41 @@
 package net.yesiltas.sample.cust.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.yesiltas.sample.cust.model.User;
 import net.yesiltas.sample.cust.repository.UserRepository;
 
+/**
+ * Class for providing all services for {@link User} entity
+ * 
+ * @author Meltem
+ *
+ */
+
 @Service
 public class UserService {
 
 	@Autowired
 	UserRepository userRepository;
-	
-	public User findByUsername(String username){
+
+	/**
+	 * Finds the user with the given username
+	 * 
+	 * @param username
+	 *            username of user to find
+	 * @return user found, or else null
+	 */
+	public User findByUsername(String username) {
 		return userRepository.findByUsername(username);
 	}
-	
-	public List<User> findAll(){
-		List<User> list = new ArrayList<>();
-		Iterable<User> iter = userRepository.findAll();
-		while (iter.iterator().hasNext()) {
-			User user = iter.iterator().next();
-			list.add(user);			
-		}
-		return list;
-	}	
+
+	/**
+	 * Finds all users
+	 * 
+	 * @return All users
+	 */
+	public Iterable<User> findAll() {
+		return userRepository.findAll();
+	}
 }

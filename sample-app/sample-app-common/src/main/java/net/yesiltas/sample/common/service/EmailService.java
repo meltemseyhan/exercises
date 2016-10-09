@@ -14,6 +14,13 @@ import org.springframework.stereotype.Service;
 
 import net.yesiltas.sample.common.model.MailAttachment;
 
+/**
+ * Service class to send email. Details about mail server 
+ * and other necessary configuration is specified in application-mail.properties
+ * 
+ * @author Meltem
+ *
+ */
 @Service
 public class EmailService {
 	
@@ -25,6 +32,17 @@ public class EmailService {
 	@Value("${mail.default.from.address}")
 	private String defaultFrom;
 	
+	/**
+	 * 
+	 * @param from			from address, defaultFrom is used if not specified
+	 * @param to			to addresses, optional
+	 * @param cc			cc addresses, optional
+	 * @param bcc			bcc addresses, optional
+	 * @param subject		subject of the email
+	 * @param content		content of the email
+	 * @param attachments	attachments to send
+	 * @return				http response with empty body
+	 */
 	public ResponseEntity<Object> sendEmail(String from, String[] to, String[] cc, String[] bcc, String subject, String content, MailAttachment[] attachments){ //NOSONAR
 	        
 	    MimeMessagePreparator messagePreparator = mimeMessage -> {

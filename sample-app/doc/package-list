@@ -1,0 +1,11 @@
+net.yesiltas.sample.client
+net.yesiltas.sample.client.adapter
+net.yesiltas.sample.client.api
+net.yesiltas.sample.common
+net.yesiltas.sample.common.model
+net.yesiltas.sample.common.service
+net.yesiltas.sample.cust
+net.yesiltas.sample.cust.api
+net.yesiltas.sample.cust.model
+net.yesiltas.sample.cust.repository
+net.yesiltas.sample.cust.service
