@@ -33,11 +33,13 @@ public class EmailServiceTest {
 	@Test
 	public void testSendEmail() throws IOException {
 		MailAttachment attachment;
-		attachment = new MailAttachment("OpenMe.pdf", ClassLoader.getSystemResourceAsStream("ruhsat.pdf"), "application/pdf");
+		attachment = new MailAttachment("OpenMe.pdf", ClassLoader.getSystemResourceAsStream("ruhsat.pdf"),
+				"application/pdf");
 		emailService.sendEmail(null, new String[] { "meltem@yesiltas.net" }, null, null, "Test Message From Meltem",
 				"Test Message From Meltem Content", new MailAttachment[] { attachment });
-		emailService.sendEmail("meltem.yesiltas@gmail.com", new String[] { "meltem@yesiltas.net" }, new String[] { "meltem@yesiltas.net" }, new String[] { "meltem@yesiltas.net" }, "Test Message From Meltem",
-				"Test Message From Meltem Content", new MailAttachment[] { attachment });
+		emailService.sendEmail("meltem.yesiltas@gmail.com", new String[] { "meltem@yesiltas.net" },
+				new String[] { "meltem@yesiltas.net" }, new String[] { "meltem@yesiltas.net" },
+				"Test Message From Meltem", "Test Message From Meltem Content", new MailAttachment[] { attachment });
 	}
 
 }

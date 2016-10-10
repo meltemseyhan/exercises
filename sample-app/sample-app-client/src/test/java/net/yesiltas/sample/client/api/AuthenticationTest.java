@@ -34,7 +34,8 @@ public class AuthenticationTest {
 	private WebApplicationContext webApplicationContext;
 
 	/**
-	 * Initializes mockMvc, ".apply(springSecurity())" must be called to be able to test security
+	 * Initializes mockMvc, ".apply(springSecurity())" must be called to be able
+	 * to test security
 	 * 
 	 * @throws Exception
 	 */
@@ -42,7 +43,7 @@ public class AuthenticationTest {
 	public void setup() throws Exception {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).apply(springSecurity()).build();
 	}
-	
+
 	/**
 	 * Tests form login with correct credentials and incorrect credentials
 	 * 
@@ -52,9 +53,9 @@ public class AuthenticationTest {
 	public void test() throws Exception {
 		// Login with wrong credentials, expect 401
 		mockMvc.perform(formLogin("/cust/login").user("meltemmm").password("passworddd")).andExpect(status().is(401));
-		
+
 		// Login with correct credentials, expect 200
 		mockMvc.perform(formLogin("/cust/login").user("meltem").password("password")).andExpect(status().isOk());
-	
+
 	}
 }

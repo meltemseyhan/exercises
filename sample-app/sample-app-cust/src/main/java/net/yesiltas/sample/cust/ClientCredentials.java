@@ -14,7 +14,6 @@ public class ClientCredentials {
 	private String name;
 	private String secret;
 
-
 	/**
 	 * @return name of the client
 	 */

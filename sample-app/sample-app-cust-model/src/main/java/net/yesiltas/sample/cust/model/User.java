@@ -32,6 +32,13 @@ public class User extends BaseEntity { // NOSONAR
 	private Boolean credentialsExpired = false;
 
 	/**
+	 * Default constructor
+	 */
+	public User() {
+		super();
+	}
+
+	/**
 	 * Constructs a user object with the given parameters
 	 * 
 	 * @param firstName

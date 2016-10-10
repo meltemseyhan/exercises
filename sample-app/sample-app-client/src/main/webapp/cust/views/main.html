@@ -2,37 +2,36 @@
 
 <html ng-app="cust">
 <head>
-	<link rel="stylesheet" href="../../webjars/bootstrap/${bootstrap.version}/css/bootstrap.css"/>
-	<link rel="stylesheet" href="../css/cust.css">
+<link rel="stylesheet" href="../../webjars/bootstrap/${bootstrap.version}/css/bootstrap.css" />
+<link rel="stylesheet" href="../css/cust.css">
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="brand " href="#/">
-                    <img src="../images/people.png" alt="logo"> Single Page Sample Application
-                </a>
-                <ul class="nav nav-pills" ng-controller="navbarController">
-                    <li ng-show="authenticated" ng-class="{'active':getClass('/customers')}"><a href="#/customers">Customers</a></li>
-					<li ng-show="!authenticated"><a href="#/login">Login</a></li>          
-					<li ng-show="authenticated"><a href="" ng-click="logout()">Logout</a></li>     
-                </ul>
-           
-            </div>
-        </div>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand " href="#/"> <img src="../images/people.png" alt="logo"> Single Page Sample Application
+        </a>
+        <ul class="nav nav-pills" ng-controller="navbarController">
+          <li ng-show="authenticated" ng-class="{'active':getClass('/customers')}"><a href="#/customers">Customers</a></li>
+          <li ng-show="!authenticated"><a href="#/login">Login</a></li>
+          <li ng-show="authenticated"><a href="" ng-click="logout()">Logout</a></li>
+        </ul>
+
+      </div>
     </div>
+  </div>
 
-	<div ng-show="error" class="alert alert-danger">{{error}}</div>
+  <div ng-show="error" class="alert alert-danger">{{error}}</div>
 
-	<div ng-view class="container"></div>
-	
-	<script src="../../webjars/angularjs/${angular.version}/angular.js"></script>
-	<script src="../../webjars/angularjs/${angular.version}/angular-resource.js"></script>
-	<script src="../../webjars/angularjs/${angular.version}/angular-route.js"></script>
-	<script src="../../webjars/angularjs/${angular.version}/angular-cookies.js"></script> 
-	<script src="../js/cust.js"></script>
-	
+  <div ng-view class="container"></div>
+
+  <script src="../../webjars/angularjs/${angular.version}/angular.js"></script>
+  <script src="../../webjars/angularjs/${angular.version}/angular-resource.js"></script>
+  <script src="../../webjars/angularjs/${angular.version}/angular-route.js"></script>
+  <script src="../../webjars/angularjs/${angular.version}/angular-cookies.js"></script>
+  <script src="../js/cust.js"></script>
+
 </body>
 </html>
 

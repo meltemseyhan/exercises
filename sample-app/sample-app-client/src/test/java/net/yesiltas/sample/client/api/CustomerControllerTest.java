@@ -55,8 +55,8 @@ public class CustomerControllerTest {
 	}
 
 	/**
-	 * Test all CRUD operations for customer entity.
-	 * "Cust" module back-end must be running for this test to work 
+	 * Test all CRUD operations for customer entity. "Cust" module back-end must
+	 * be running for this test to work
 	 * 
 	 * @throws Exception
 	 */

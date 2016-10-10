@@ -32,14 +32,14 @@ public class UserServiceTest {
 	 */
 	@Test
 	public void test() throws IOException {
-		
+
 		User user = userService.findByUsername("meltem");
 		assertEquals("meltem@yesiltas.net", user.getEmail());
-		
+
 		Iterable<User> list = userService.findAll();
 		boolean found = false;
 		for (User next : list) {
-			if(next.equals(user)){
+			if (next.equals(user)) {
 				found = true;
 				break;
 			}

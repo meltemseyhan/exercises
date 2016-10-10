@@ -2,6 +2,7 @@ package net.yesiltas.sample.cust.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import net.yesiltas.sample.cust.model.Customer;
 import net.yesiltas.sample.cust.repository.CustomerRepository;
@@ -46,6 +47,7 @@ public class CustomerService {
 	 *            customer entity to be saved
 	 * @return customer entity saved
 	 */
+	@Transactional
 	public Customer save(Customer cust) {
 		return customerRepository.save(cust);
 	}
@@ -56,6 +58,7 @@ public class CustomerService {
 	 * @param id
 	 *            id of customer to delete
 	 */
+	@Transactional
 	public void delete(Long id) {
 		customerRepository.delete(id);
 	}

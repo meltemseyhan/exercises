@@ -34,7 +34,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/sample-app-common-model"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/sample-app-common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sample-app-common">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/sample-app-cust-model"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

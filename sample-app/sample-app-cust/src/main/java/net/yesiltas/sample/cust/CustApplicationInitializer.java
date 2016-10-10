@@ -19,7 +19,8 @@ public class CustApplicationInitializer extends SpringBootServletInitializer {
 	 * and running it as a stand-alone java application. Spring boot will
 	 * trigger an embedded Tomcat server and serve the application.
 	 * 
-	 * @param args command line arguments to start application
+	 * @param args
+	 *            command line arguments to start application
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(CustApplicationInitializer.class, args); // NOSONAR

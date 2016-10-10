@@ -24,6 +24,13 @@ public class Customer extends BaseEntity {
 	private String country;
 
 	/**
+	 * Default constructor
+	 */
+	public Customer() {
+		super();
+	}
+
+	/**
 	 * Constructs a customer with the given parameters
 	 * 
 	 * @param name

@@ -24,6 +24,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import net.yesiltas.sample.cust.CustApplicationInitializer;
 import net.yesiltas.sample.cust.model.Customer;
+
 /**
  * For testing {@link CustomerController}
  * 
