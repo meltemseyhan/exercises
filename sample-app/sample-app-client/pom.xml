@@ -80,8 +80,16 @@
 			</activation>
 
 			<properties>
+				<base.url>http://localhost:8080/sample-app-client</base.url>				
+				<cust.api.url>http://localhost:8080/sample-app-cust/</cust.api.url>
 			</properties>
 		</profile>
-
+		<profile>
+			<id>aws</id>
+			<properties>
+				<base.url>http://sampleappclient.xqww4ww9un.us-east-1.elasticbeanstalk.com</base.url>
+				<cust.api.url>http://sampleappcust.pxmpuwacat.us-east-1.elasticbeanstalk.com</cust.api.url>				
+			</properties>
+		</profile>
 	</profiles>
 </project>

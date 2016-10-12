@@ -1,6 +1,4 @@
-package net.yesiltas.sample.common.service;
-
-import static org.junit.Assert.assertEquals;
+package net.yesiltas.sample.cust.service;
 
 import java.io.IOException;
 
@@ -14,9 +12,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import net.yesiltas.sample.common.CommonApplicationInitializer;
 import net.yesiltas.sample.common.model.MailAttachment;
+import net.yesiltas.sample.common.service.EmailService;
+import static org.junit.Assert.*;
 
 /**
- * For testing {@link EmailService}
+ * For testing {@link EmailService} Normally this service is implemented and
+ * tested in the common project, but to be sure that we can use services from
+ * common project the test is also executed here
  * 
  * @author Meltem
  *
@@ -42,7 +44,7 @@ public class EmailServiceTest {
 		ResponseEntity<?> response = emailService.sendEmail(null, new String[] { "meltem@yesiltas.net" }, null, null,
 				"Test Message From Meltem", "Test Message From Meltem Content", new MailAttachment[] { attachment });
 		assertEquals(HttpStatus.OK, response.getStatusCode());
-		response = emailService.sendEmail("meltem.yesiltas@gmail.com", new String[] { "meltem@yesiltas.net" },
+		response = emailService.sendEmail("sezer@yesiltas.net", new String[] { "meltem@yesiltas.net", "meltem.yesiltas@gmail.com" },
 				new String[] { "meltem@yesiltas.net" }, new String[] { "meltem@yesiltas.net" },
 				"Test Message From Meltem", "Test Message From Meltem Content", new MailAttachment[] { attachment });
 		assertEquals(HttpStatus.OK, response.getStatusCode());

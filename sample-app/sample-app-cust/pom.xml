@@ -18,20 +18,53 @@
 			<groupId>net.yesiltas</groupId>
 			<artifactId>sample-app-common</artifactId>
 			<version>${project.parent.version}</version>
-		</dependency>	    	
+		</dependency>
 		<dependency>
 			<groupId>net.yesiltas</groupId>
 			<artifactId>sample-app-common-model</artifactId>
 			<version>${project.parent.version}</version>
-		</dependency>	
+		</dependency>
 		<dependency>
 			<groupId>net.yesiltas</groupId>
 			<artifactId>sample-app-cust-model</artifactId>
 			<version>${project.parent.version}</version>
-		</dependency>	
+		</dependency>
 	</dependencies>
 
 	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
 		<finalName>sample-app-cust</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<mysql.spring.profile>mysql-local</mysql.spring.profile>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>aws</id>
+			<properties>
+				<mysql.spring.profile>mysql-aws</mysql.spring.profile>
+			</properties>
+		</profile>
+	</profiles>
 </project>

@@ -11,7 +11,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
  * @author Meltem
  */
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages={"net.yesiltas.sample.cust", "net.yesiltas.sample.common"})
 public class CustApplicationInitializer extends SpringBootServletInitializer {
 
 	/**

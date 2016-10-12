@@ -3,7 +3,7 @@
 var app = angular.module('cust', ['ngRoute']);
 
 app.constant("config", {
-	"base":"http://localhost:8080/sample-app-client"
+	"base":"${base.url}"
 });
 
 app.controller('loginController', function($rootScope, $scope, $location, $http, config) {
