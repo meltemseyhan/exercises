@@ -2,8 +2,8 @@
 A sample project using spring-boot and AngularJS by Meltem Yesiltas. 
 
 It will be packaged as two deployable WAR files:
-+/sample-app/sample-app-client/target/sample-app-client.war
-+/sample-app/sample-app-cust/target/sample-app-cust.war
++ sample-app/sample-app-client/target/sample-app-client.war
++ sample-app/sample-app-cust/target/sample-app-cust.war
 
 ## project structure
 The project is configured to be a multi module maven project. sample-app/ is the parent pom module.
@@ -22,7 +22,7 @@ Following are required to build and run the executables
 + maven 3.3+
 + mysql 5.7+ 
 
-##configuration
+## configuration
 
 You should configure sample-app-client/ and sample-app-cust/ projects.
 
@@ -71,7 +71,7 @@ When you have sampl-app-cust, you can run these tests.
 Just deploy the following two WAR files to any JEE server of your favorite.
 They are tested on Tomcat both locally and on AWS ElasticBeanstalk. They don't have to run on same server, they are independent.
 
-+/sample-app/sample-app-client/target/sample-app-client.war
-+/sample-app/sample-app-cust/target/sample-app-cust.war
++ sample-app/sample-app-client/target/sample-app-client.war
++ sample-app/sample-app-cust/target/sample-app-cust.war
 
 If you have any questions, you can contact meltem@yesiltas.net. 
