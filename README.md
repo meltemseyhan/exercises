@@ -9,11 +9,11 @@ It will be packaged as two deployable WAR files:
 The project is configured to be a multi module maven project. sample-app/ is the parent pom module.
 
 + sample-app/
-  +sample-app-client/
-  +sample-app-common/
-  +sample-app-common-model/
-  +sample-app-cust/
-  +sample-app-cust-model/
+  + sample-app-client/
+  + sample-app-common/
+  + sample-app-common-model/
+  + sample-app-cust/
+  + sample-app-cust-model/
 
 ## prerequisites
 Following are required to build and run the executables
@@ -36,14 +36,13 @@ Determine a Spring profile name of you want for DB. Lets say you named it "mysql
 Just create a Spring application configuration file with tihs name: application-{mysql-test}.properties.
 Put necessary connection parameters in it, a sample content:
 
-spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-spring.datasource.url=jdbc:mysql://localhost:3306/sampleDB?profileSQL=false&useSSL=false
-spring.datasource.username=root
-spring.datasource.password=123456
+- spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+- spring.datasource.url=jdbc:mysql://localhost:3306/sampleDB?profileSQL=false&useSSL=false
+- spring.datasource.username=root
+- spring.datasource.password=123456
 
 Your file must be in classpath root. You can put it in "/sample-app/sample-app-cust/src/main/resources". 
-In the pom.xml, find maven profile called "dev", under it find the property called "mysql.spring.profile", set your profilename (mysql-test)
-as the value.
+In the pom.xml, find maven profile called "dev", under it find the property called "mysql.spring.profile", set your profilename (mysql-test) as the value.
 
 That is all for sample-app-cust/ project.
 
@@ -52,8 +51,8 @@ You can have a look at "/sample-app/sample-app-client/src/main/resources" for al
 But the only configuration you have to change before proceeding is URL configurations of both sample-app-client and sample-app-cust applications.
 You need to know this information beforehand.
 
-In the pom.xml, find maven profile called "dev", under it find the property called "base.url", set the runtime URL for sample-app-client application as the value.
-In the pom.xml, find maven profile called "dev", under it find the property called "cust.api.url", set the runtime URL for sample-app-cust application as the value.
+- In the pom.xml, find maven profile called "dev", under it find the property called "base.url", set the runtime URL for sample-app-client application as the value.
+- In the pom.xml, find maven profile called "dev", under it find the property called "cust.api.url", set the runtime URL for sample-app-cust application as the value.
 
 That is all for sample-app-cust/ project.
 
@@ -73,5 +72,9 @@ They are tested on Tomcat both locally and on AWS ElasticBeanstalk. They don't h
 
 + sample-app/sample-app-client/target/sample-app-client.war
 + sample-app/sample-app-cust/target/sample-app-cust.war
+
+## running
+
+Front-end project is sample-app-client. Open a browser and call its URL (e.g. http://localhost:8080/sample-app-client/index.html). Then click "Customer Application" link.
 
 If you have any questions, you can contact meltem@yesiltas.net. 
