@@ -1,5 +1,5 @@
 # sample-app project
-A sample project using spring-boot and AngularJS by Meltem Yesiltas. 
+A sample project using spring-boot and AngularJS by Meltem Yesiltas. Spring security is enabled for authentication.
 
 It will be packaged as two deployable WAR files:
 + sample-app/sample-app-client/target/sample-app-client.war
@@ -75,6 +75,8 @@ They are tested on Tomcat both locally and on AWS ElasticBeanstalk. They don't h
 
 ## running
 
-Front-end project is sample-app-client. Open a browser and call its URL (e.g. http://localhost:8080/sample-app-client/index.html). Then click "Customer Application" link.
+Front-end project is sample-app-client. Open a browser and call its URL (e.g. http://localhost:8080/sample-app-client/index.html). Then click "Customer Application" link. To login you can use "meltem" as username and "password" as password.
+
+You can see an already running version via http://sampleappclient.xqww4ww9un.us-east-1.elasticbeanstalk.com/
 
 If you have any questions, you can contact meltem@yesiltas.net. 
