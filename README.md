@@ -1,5 +1,5 @@
 # sample-app project
-A sample project using spring-boot and AngularJS by Meltem Yesiltas. Spring security is enabled for authentication.
+A sample project using spring-boot and AngularJS by Meltem Seyhan. Spring security is enabled for authentication.
 
 It will be packaged as two deployable WAR files:
 + sample-app/sample-app-client/target/sample-app-client.war
