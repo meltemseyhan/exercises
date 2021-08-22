@@ -79,4 +79,4 @@ Front-end project is sample-app-client. Open a browser and call its URL (e.g. ht
 
 You can see an already running version via http://sampleappclient.xqww4ww9un.us-east-1.elasticbeanstalk.com/
 
-If you have any questions, you can contact meltem@yesiltas.net. 
+If you have any questions, you can contact meltem.yesiltas@gmail.com
