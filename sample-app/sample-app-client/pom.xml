@@ -11,7 +11,7 @@
 	<name>sample-app-client</name>
 
 	<properties>
-		<bootstrap.version>3.3.7</bootstrap.version>
+		<bootstrap.version>3.4.1</bootstrap.version>
 		<angular.version>1.5.8</angular.version>
 		<jquery.version>3.1.0</jquery.version>
 	</properties>
